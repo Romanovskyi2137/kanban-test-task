@@ -7,8 +7,16 @@
     "client",
     "server"
   ],
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "npx prettier --write"
+    ],
+    "*.{json,md,yml}": [
+      "npx prettier --write"
+    ]
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky"
   },
   "keywords": [],
