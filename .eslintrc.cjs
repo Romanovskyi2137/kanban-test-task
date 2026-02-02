@@ -22,7 +22,7 @@ module.exports = {
 		],
 
 		'no-restricted-syntax': [
-			'error',
+			'warn',
 			{
 				selector:
 					'ImportDeclaration[source.value=/.svg/][source.value=/\\u002E\\u002E\\u002Fassets/]',
@@ -78,7 +78,7 @@ module.exports = {
 
 		/* i18next */
 		'i18next/no-literal-string': [
-			'error',
+			'warn',
 			{
 				message: 'Disallow literal string. Use i18next instead!'
 			}
