@@ -1,0 +1,456 @@
+{
+	"/home/romanovskyi/projects/github-kanban-task/server/src/api/controllers/serviсes/board.service.ts": {
+		"path": "/home/romanovskyi/projects/github-kanban-task/server/src/api/controllers/serviсes/board.service.ts",
+		"statementMap": {
+			"0": {
+				"start": { "line": 3, "column": 28 },
+				"end": { "line": 7, "column": null }
+			},
+			"1": {
+				"start": { "line": 4, "column": 1 },
+				"end": { "line": 6, "column": null }
+			},
+			"2": {
+				"start": { "line": 9, "column": 28 },
+				"end": { "line": 22, "column": null }
+			},
+			"3": {
+				"start": { "line": 10, "column": 1 },
+				"end": { "line": 21, "column": null }
+			},
+			"4": {
+				"start": { "line": 24, "column": 27 },
+				"end": { "line": 28, "column": null }
+			},
+			"5": {
+				"start": { "line": 25, "column": 1 },
+				"end": { "line": 27, "column": null }
+			},
+			"6": {
+				"start": { "line": 30, "column": 27 },
+				"end": { "line": 35, "column": null }
+			},
+			"7": {
+				"start": { "line": 31, "column": 1 },
+				"end": { "line": 34, "column": null }
+			},
+			"8": {
+				"start": { "line": 37, "column": 27 },
+				"end": { "line": 41, "column": null }
+			},
+			"9": {
+				"start": { "line": 38, "column": 1 },
+				"end": { "line": 40, "column": null }
+			}
+		},
+		"fnMap": {
+			"0": {
+				"name": "(anonymous_0)",
+				"decl": {
+					"start": { "line": 3, "column": 28 },
+					"end": { "line": 3, "column": 40 }
+				},
+				"loc": {
+					"start": { "line": 3, "column": 40 },
+					"end": { "line": 7, "column": null }
+				},
+				"line": 3
+			},
+			"1": {
+				"name": "(anonymous_1)",
+				"decl": {
+					"start": { "line": 9, "column": 28 },
+					"end": { "line": 9, "column": 35 }
+				},
+				"loc": {
+					"start": { "line": 9, "column": 50 },
+					"end": { "line": 22, "column": null }
+				},
+				"line": 9
+			},
+			"2": {
+				"name": "(anonymous_2)",
+				"decl": {
+					"start": { "line": 24, "column": 27 },
+					"end": { "line": 24, "column": 34 }
+				},
+				"loc": {
+					"start": { "line": 24, "column": 51 },
+					"end": { "line": 28, "column": null }
+				},
+				"line": 24
+			},
+			"3": {
+				"name": "(anonymous_3)",
+				"decl": {
+					"start": { "line": 30, "column": 27 },
+					"end": { "line": 30, "column": 34 }
+				},
+				"loc": {
+					"start": { "line": 30, "column": 63 },
+					"end": { "line": 35, "column": null }
+				},
+				"line": 30
+			},
+			"4": {
+				"name": "(anonymous_4)",
+				"decl": {
+					"start": { "line": 37, "column": 27 },
+					"end": { "line": 37, "column": 34 }
+				},
+				"loc": {
+					"start": { "line": 37, "column": 49 },
+					"end": { "line": 41, "column": null }
+				},
+				"line": 37
+			}
+		},
+		"branchMap": {},
+		"s": {
+			"0": 1,
+			"1": 1,
+			"2": 1,
+			"3": 0,
+			"4": 1,
+			"5": 1,
+			"6": 1,
+			"7": 0,
+			"8": 1,
+			"9": 0
+		},
+		"f": { "0": 1, "1": 0, "2": 1, "3": 0, "4": 0 },
+		"b": {},
+		"meta": {
+			"lastBranch": 0,
+			"lastFunction": 5,
+			"lastStatement": 10,
+			"seen": {
+				"s:3:28:7:Infinity": 0,
+				"f:3:28:3:40": 0,
+				"s:4:1:6:Infinity": 1,
+				"s:9:28:22:Infinity": 2,
+				"f:9:28:9:35": 1,
+				"s:10:1:21:Infinity": 3,
+				"s:24:27:28:Infinity": 4,
+				"f:24:27:24:34": 2,
+				"s:25:1:27:Infinity": 5,
+				"s:30:27:35:Infinity": 6,
+				"f:30:27:30:34": 3,
+				"s:31:1:34:Infinity": 7,
+				"s:37:27:41:Infinity": 8,
+				"f:37:27:37:34": 4,
+				"s:38:1:40:Infinity": 9
+			}
+		}
+	},
+	"/home/romanovskyi/projects/github-kanban-task/server/src/api/controllers/serviсes/card.service.ts": {
+		"path": "/home/romanovskyi/projects/github-kanban-task/server/src/api/controllers/serviсes/card.service.ts",
+		"statementMap": {
+			"0": {
+				"start": { "line": 3, "column": 26 },
+				"end": { "line": 20, "column": null }
+			},
+			"1": {
+				"start": { "line": 5, "column": 19 },
+				"end": { "line": 8, "column": null }
+			},
+			"2": {
+				"start": { "line": 10, "column": 20 },
+				"end": { "line": 10, "column": null }
+			},
+			"3": {
+				"start": { "line": 12, "column": 2 },
+				"end": { "line": 19, "column": null }
+			},
+			"4": {
+				"start": { "line": 22, "column": 26 },
+				"end": { "line": 27, "column": null }
+			},
+			"5": {
+				"start": { "line": 23, "column": 2 },
+				"end": { "line": 26, "column": null }
+			},
+			"6": {
+				"start": { "line": 29, "column": 26 },
+				"end": { "line": 33, "column": null }
+			},
+			"7": {
+				"start": { "line": 30, "column": 2 },
+				"end": { "line": 32, "column": null }
+			},
+			"8": {
+				"start": { "line": 39, "column": 24 },
+				"end": { "line": 55, "column": null }
+			},
+			"9": {
+				"start": { "line": 40, "column": 2 },
+				"end": { "line": 54, "column": null }
+			},
+			"10": {
+				"start": { "line": 41, "column": 17 },
+				"end": { "line": 41, "column": null }
+			},
+			"11": {
+				"start": { "line": 42, "column": 4 },
+				"end": { "line": 44, "column": null }
+			},
+			"12": {
+				"start": { "line": 43, "column": 6 },
+				"end": { "line": 43, "column": null }
+			},
+			"13": {
+				"start": { "line": 47, "column": 4 },
+				"end": { "line": 53, "column": null }
+			}
+		},
+		"fnMap": {
+			"0": {
+				"name": "(anonymous_0)",
+				"decl": {
+					"start": { "line": 3, "column": 26 },
+					"end": { "line": 3, "column": 33 }
+				},
+				"loc": {
+					"start": { "line": 3, "column": 102 },
+					"end": { "line": 20, "column": null }
+				},
+				"line": 3
+			},
+			"1": {
+				"name": "(anonymous_1)",
+				"decl": {
+					"start": { "line": 22, "column": 26 },
+					"end": { "line": 22, "column": 33 }
+				},
+				"loc": {
+					"start": { "line": 22, "column": 96 },
+					"end": { "line": 27, "column": null }
+				},
+				"line": 22
+			},
+			"2": {
+				"name": "(anonymous_2)",
+				"decl": {
+					"start": { "line": 29, "column": 26 },
+					"end": { "line": 29, "column": 33 }
+				},
+				"loc": {
+					"start": { "line": 29, "column": 48 },
+					"end": { "line": 33, "column": null }
+				},
+				"line": 29
+			},
+			"3": {
+				"name": "(anonymous_3)",
+				"decl": {
+					"start": { "line": 39, "column": 24 },
+					"end": { "line": 39, "column": 31 }
+				},
+				"loc": {
+					"start": { "line": 39, "column": 92 },
+					"end": { "line": 55, "column": null }
+				},
+				"line": 39
+			},
+			"4": {
+				"name": "(anonymous_4)",
+				"decl": {
+					"start": { "line": 40, "column": 35 },
+					"end": { "line": 40, "column": 42 }
+				},
+				"loc": {
+					"start": { "line": 40, "column": 49 },
+					"end": { "line": 54, "column": 3 }
+				},
+				"line": 40
+			}
+		},
+		"branchMap": {
+			"0": {
+				"loc": {
+					"start": { "line": 10, "column": 20 },
+					"end": { "line": 10, "column": null }
+				},
+				"type": "cond-expr",
+				"locations": [
+					{
+						"start": { "line": 10, "column": 31 },
+						"end": { "line": 10, "column": 52 }
+					},
+					{
+						"start": { "line": 10, "column": 52 },
+						"end": { "line": 10, "column": null }
+					}
+				],
+				"line": 10
+			},
+			"1": {
+				"loc": {
+					"start": { "line": 15, "column": 19 },
+					"end": { "line": 15, "column": null }
+				},
+				"type": "binary-expr",
+				"locations": [
+					{
+						"start": { "line": 15, "column": 19 },
+						"end": { "line": 15, "column": 34 }
+					},
+					{
+						"start": { "line": 15, "column": 34 },
+						"end": { "line": 15, "column": null }
+					}
+				],
+				"line": 15
+			},
+			"2": {
+				"loc": {
+					"start": { "line": 42, "column": 4 },
+					"end": { "line": 44, "column": null }
+				},
+				"type": "if",
+				"locations": [
+					{
+						"start": { "line": 42, "column": 4 },
+						"end": { "line": 44, "column": null }
+					},
+					{ "start": {}, "end": {} }
+				],
+				"line": 42
+			}
+		},
+		"s": {
+			"0": 1,
+			"1": 1,
+			"2": 1,
+			"3": 1,
+			"4": 1,
+			"5": 1,
+			"6": 1,
+			"7": 1,
+			"8": 1,
+			"9": 1,
+			"10": 1,
+			"11": 1,
+			"12": 0,
+			"13": 1
+		},
+		"f": { "0": 1, "1": 1, "2": 1, "3": 1, "4": 1 },
+		"b": { "0": [1, 0], "1": [1, 0], "2": [0, 1] },
+		"meta": {
+			"lastBranch": 3,
+			"lastFunction": 5,
+			"lastStatement": 14,
+			"seen": {
+				"s:3:26:20:Infinity": 0,
+				"f:3:26:3:33": 0,
+				"s:5:19:8:Infinity": 1,
+				"s:10:20:10:Infinity": 2,
+				"b:10:31:10:52:10:52:10:Infinity": 0,
+				"s:12:2:19:Infinity": 3,
+				"b:15:19:15:34:15:34:15:Infinity": 1,
+				"s:22:26:27:Infinity": 4,
+				"f:22:26:22:33": 1,
+				"s:23:2:26:Infinity": 5,
+				"s:29:26:33:Infinity": 6,
+				"f:29:26:29:33": 2,
+				"s:30:2:32:Infinity": 7,
+				"s:39:24:55:Infinity": 8,
+				"f:39:24:39:31": 3,
+				"s:40:2:54:Infinity": 9,
+				"f:40:35:40:42": 4,
+				"s:41:17:41:Infinity": 10,
+				"b:42:4:44:Infinity:undefined:undefined:undefined:undefined": 2,
+				"s:42:4:44:Infinity": 11,
+				"s:43:6:43:Infinity": 12,
+				"s:47:4:53:Infinity": 13
+			}
+		}
+	},
+	"/home/romanovskyi/projects/github-kanban-task/server/src/api/controllers/serviсes/column.service.ts": {
+		"path": "/home/romanovskyi/projects/github-kanban-task/server/src/api/controllers/serviсes/column.service.ts",
+		"statementMap": {
+			"0": {
+				"start": { "line": 3, "column": 28 },
+				"end": { "line": 10, "column": null }
+			},
+			"1": {
+				"start": { "line": 4, "column": 1 },
+				"end": { "line": 9, "column": null }
+			},
+			"2": {
+				"start": { "line": 12, "column": 28 },
+				"end": { "line": 17, "column": null }
+			},
+			"3": {
+				"start": { "line": 13, "column": 1 },
+				"end": { "line": 16, "column": null }
+			},
+			"4": {
+				"start": { "line": 19, "column": 28 },
+				"end": { "line": 23, "column": null }
+			},
+			"5": {
+				"start": { "line": 20, "column": 1 },
+				"end": { "line": 22, "column": null }
+			}
+		},
+		"fnMap": {
+			"0": {
+				"name": "(anonymous_0)",
+				"decl": {
+					"start": { "line": 3, "column": 28 },
+					"end": { "line": 3, "column": 35 }
+				},
+				"loc": {
+					"start": { "line": 3, "column": 70 },
+					"end": { "line": 10, "column": null }
+				},
+				"line": 3
+			},
+			"1": {
+				"name": "(anonymous_1)",
+				"decl": {
+					"start": { "line": 12, "column": 28 },
+					"end": { "line": 12, "column": 35 }
+				},
+				"loc": {
+					"start": { "line": 12, "column": 65 },
+					"end": { "line": 17, "column": null }
+				},
+				"line": 12
+			},
+			"2": {
+				"name": "(anonymous_2)",
+				"decl": {
+					"start": { "line": 19, "column": 28 },
+					"end": { "line": 19, "column": 35 }
+				},
+				"loc": {
+					"start": { "line": 19, "column": 50 },
+					"end": { "line": 23, "column": null }
+				},
+				"line": 19
+			}
+		},
+		"branchMap": {},
+		"s": { "0": 1, "1": 1, "2": 1, "3": 1, "4": 1, "5": 1 },
+		"f": { "0": 1, "1": 1, "2": 1 },
+		"b": {},
+		"meta": {
+			"lastBranch": 0,
+			"lastFunction": 3,
+			"lastStatement": 6,
+			"seen": {
+				"s:3:28:10:Infinity": 0,
+				"f:3:28:3:35": 0,
+				"s:4:1:9:Infinity": 1,
+				"s:12:28:17:Infinity": 2,
+				"f:12:28:12:35": 1,
+				"s:13:1:16:Infinity": 3,
+				"s:19:28:23:Infinity": 4,
+				"f:19:28:19:35": 2,
+				"s:20:1:22:Infinity": 5
+			}
+		}
+	}
+}
