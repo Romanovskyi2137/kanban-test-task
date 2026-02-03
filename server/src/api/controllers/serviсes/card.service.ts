@@ -43,6 +43,7 @@ export const deleteCard = async (id: number) => {
  * Handles complex drag-and-drop logic
  * Supports moving between columns and reordering
  */
+
 export const moveCard = async (
 	cardId: number,
 	targetColumnId: number,
@@ -53,8 +54,46 @@ export const moveCard = async (
 		if (!card) {
 			throw new Error('Card not found')
 		}
+		const oldColumnId = card.columnId
+		const oldOrder = card.order
 
-		// Simple update for MVP, complex reordering logic can be added here
+		if (oldColumnId === targetColumnId) {
+			// Reordering within the same column
+			if (newOrder > oldOrder) {
+				// Moving down: shift cards between old and new positions up
+				await tx.card.updateMany({
+					where: {
+						columnId: oldColumnId,
+						order: { gt: oldOrder, lte: newOrder }
+					},
+					data: { order: { decrement: 1 } }
+				})
+			} else if (newOrder < oldOrder) {
+				// Moving up: shift cards between new and old positions down
+				await tx.card.updateMany({
+					where: {
+						columnId: oldColumnId,
+						order: { gte: newOrder, lt: oldOrder }
+					},
+					data: { order: { increment: 1 } }
+				})
+			}
+		} else {
+			// Moving to a different column
+			// 1. Close the gap in the source column
+			await tx.card.updateMany({
+				where: { columnId: oldColumnId, order: { gt: oldOrder } },
+				data: { order: { decrement: 1 } }
+			})
+
+			// 2. Make space in the destination column
+			await tx.card.updateMany({
+				where: { columnId: targetColumnId, order: { gte: newOrder } },
+				data: { order: { increment: 1 } }
+			})
+		}
+
+		// Final step: update the dragged card's position and column
 		return await tx.card.update({
 			where: { id: cardId },
 			data: {
