@@ -1,4 +1,8 @@
+import { useEffect } from 'react'
+
 import { useBoard } from '@features/board/hooks/useBoard'
+
+import { saveBoardToStorage } from '@utils/storage'
 
 import styles from './Board.module.scss'
 import Column from './components/Column/Column'
@@ -8,7 +12,12 @@ interface BoardProps {
 }
 
 const Board = ({ boardId }: BoardProps) => {
-	const { data: board, isLoading, isError } = useBoard(boardId)
+	const { data: board, isLoading, isError, isSuccess } = useBoard(boardId)
+	useEffect(() => {
+		if (isSuccess && board) {
+			saveBoardToStorage({ id: board.id, name: board.name })
+		}
+	}, [board])
 
 	if (isLoading) {
 		return <div className={styles.loading}>Loading board...</div>
@@ -20,6 +29,7 @@ const Board = ({ boardId }: BoardProps) => {
 
 	return (
 		<div className={styles.boardWrapper}>
+			<h1>{board.name}</h1>
 			<div className={styles.columnsContainer}>
 				{board.columns.map(column => (
 					<Column
