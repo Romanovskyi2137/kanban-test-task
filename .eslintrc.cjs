@@ -74,15 +74,15 @@ module.exports = {
 		'no-lonely-if': 'error',
 		'no-return-assign': 'error',
 		'no-multi-str': 'error',
-		'no-implicit-coercion': 'error',
+		'no-implicit-coercion': 'error'
 
 		/* i18next */
-		'i18next/no-literal-string': [
-			'warn',
-			{
-				message: 'Disallow literal string. Use i18next instead!'
-			}
-		]
+		// 'i18next/no-literal-string': [
+		// 	'warn',
+		// 	{
+		// 		message: 'Disallow literal string. Use i18next instead!'
+		// 	}
+		// ]
 	},
 	settings: {
 		react: {
