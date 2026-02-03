@@ -1,9 +1,4 @@
 {
-	// path aliases
-	"baseUrl": ".",
-	"paths": {
-		"@/*": ["./*"]
-	},
 	"files": [],
 	"references": [
 		{ "path": "./tsconfig.app.json" },

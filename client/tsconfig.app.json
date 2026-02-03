@@ -16,8 +16,10 @@
 			"@components/*": ["./src/components/*"],
 			"@constants/*": ["./src/constants/*"],
 			"@store/*": ["./src/store/*"],
-			"@types/*": ["./src/types/*"],
-			"@utils/*": ["./src/utils/*"]
+			"@app-types/*": ["./src/types/*"],
+			"@utils/*": ["./src/utils/*"],
+			"@features/*": ["./src/features/*"],
+			"@styles/*": ["./src/styles/*"]
 		},
 
 		/* Bundler mode */
