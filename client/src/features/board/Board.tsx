@@ -35,6 +35,7 @@ const Board = ({ boardId }: BoardProps) => {
 					<Column
 						key={column.id}
 						column={column}
+						boardId={board.id}
 					/>
 				))}
 			</div>

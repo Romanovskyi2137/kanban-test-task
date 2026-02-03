@@ -1,13 +1,15 @@
 import type { Column as ColumnType } from '@app-types/kanban'
 
-import Card from '../Card/Card'
+import { AddCardForm } from '../AddCardForm/AddCardForm'
+import { Card } from '../Card/Card'
 import styles from './Column.module.scss'
 
 interface ColumnProps {
 	column: ColumnType
+	boardId: string
 }
 
-const Column = ({ column }: ColumnProps) => {
+const Column = ({ column, boardId }: ColumnProps) => {
 	const sortedCards = [...column.cards].sort(
 		(cardA, cardB) => cardA.order - cardB.order
 	)
@@ -18,7 +20,8 @@ const Column = ({ column }: ColumnProps) => {
 				<h3 className={styles.title}>{column.title}</h3>
 				<span className={styles.count}>{column.cards.length}</span>
 			</div>
-			<div className={styles.cardList}>
+
+			<div className={styles.cardsList}>
 				{sortedCards.map(card => (
 					<Card
 						key={card.id}
@@ -26,7 +29,13 @@ const Column = ({ column }: ColumnProps) => {
 					/>
 				))}
 			</div>
-			<button className={styles.addCard}>+ Add a card</button>
+
+			<div className={styles.footer}>
+				<AddCardForm
+					columnId={column.id}
+					boardId={boardId}
+				/>
+			</div>
 		</div>
 	)
 }

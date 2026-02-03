@@ -1,0 +1,29 @@
+@use '@styles/variables' as *;
+
+.container {
+	textarea {
+		width: 100%;
+		min-height: 60px;
+		padding: 8px;
+		border-radius: 8px;
+		border: none;
+		box-shadow: inset 0 0 0 2px $primary;
+		resize: none;
+		outline: none;
+		font-family: inherit;
+	}
+}
+.addBtn {
+	width: 100%;
+	text-align: left;
+	padding: 8px 12px;
+	background: transparent;
+	border: none;
+	border-radius: 8px;
+	color: #5e6c84;
+	cursor: pointer;
+	&:hover {
+		background: rgba(0, 0, 0, 0.05);
+		color: #172b4d;
+	}
+}
