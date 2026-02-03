@@ -39,15 +39,27 @@ export const updateCard = async (
 export const moveCard = async (req: Request<{ id: string }>, res: Response) => {
 	try {
 		const id = parseInt(req.params.id)
-		const { columnId, order } = req.body
+		const { targetColumnId, newOrder } = req.body
+
+		if (
+			isNaN(id) ||
+			isNaN(parseInt(targetColumnId)) ||
+			isNaN(parseInt(newOrder))
+		) {
+			return res
+				.status(400)
+				.json({ message: 'Invalid cardId, columnId or order' })
+		}
 
 		const moved = await cardService.moveCard(
 			id,
-			parseInt(columnId),
-			parseInt(order)
+			Number(targetColumnId),
+			Number(newOrder)
 		)
+
 		res.json(moved)
 	} catch (error) {
+		console.error('Backend moveCard error:', error)
 		res.status(500).json({ message: 'Error moving card', error })
 	}
 }
