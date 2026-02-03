@@ -7,8 +7,18 @@
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 	color: #333;
 	font-size: 14px;
-	cursor: pointer;
-	&:hover {
-		background: #f9f9f9;
+	cursor: grab;
+	transition:
+		background 0.2s,
+		transform 0.1s;
+
+	&:active {
+		cursor: grabbing;
 	}
+}
+
+.dragging {
+	background: #f4f5f7;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+	transform: rotate(2deg);
 }

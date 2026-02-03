@@ -1,4 +1,5 @@
 import type { Column as ColumnType } from '@app-types/kanban'
+import { Droppable } from '@hello-pangea/dnd'
 
 import { AddCardForm } from '../AddCardForm/AddCardForm'
 import { Card } from '../Card/Card'
@@ -21,14 +22,27 @@ const Column = ({ column, boardId }: ColumnProps) => {
 				<span className={styles.count}>{column.cards.length}</span>
 			</div>
 
-			<div className={styles.cardsList}>
-				{sortedCards.map(card => (
-					<Card
-						key={card.id}
-						card={card}
-					/>
-				))}
-			</div>
+			<Droppable droppableId={column.id.toString()}>
+				{(provided, snapshot) => (
+					<div
+						className={`${styles.cardsList} ${
+							snapshot.isDraggingOver ? styles.draggingOver : ''
+						}`}
+						{...provided.droppableProps}
+						ref={provided.innerRef}
+					>
+						{sortedCards.map((card, index) => (
+							<Card
+								key={card.id}
+								card={card}
+								index={index}
+							/>
+						))}
+
+						{provided.placeholder}
+					</div>
+				)}
+			</Droppable>
 
 			<div className={styles.footer}>
 				<AddCardForm

@@ -40,6 +40,8 @@
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
+	min-height: 50px;
+	-webkit-overflow-scrolling: touch;
 
 	&::-webkit-scrollbar {
 		width: 6px;
