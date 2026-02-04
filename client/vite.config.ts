@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import react from '@vitejs/plugin-react'
 import path from 'path'
 import { defineConfig } from 'vite'
@@ -17,4 +18,8 @@ export default defineConfig({
 			'@utils': path.resolve(__dirname, './src/utils')
 		}
 	}
+	// test: {
+	// 	globals: true,
+	//   environment: 'jsdom',
+	// }
 })
