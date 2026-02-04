@@ -36,6 +36,7 @@ const Column = ({ column, boardId }: ColumnProps) => {
 								key={card.id}
 								card={card}
 								index={index}
+								boardId={boardId}
 							/>
 						))}
 

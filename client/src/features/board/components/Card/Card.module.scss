@@ -2,23 +2,175 @@
 
 .card {
 	background: white;
-	padding: 10px 12px;
+	padding: 12px;
 	border-radius: 8px;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-	color: #333;
+	box-shadow:
+		0 1px 3px rgba(0, 0, 0, 0.1),
+		0 1px 2px rgba(0, 0, 0, 0.06);
+	color: #172b4d;
 	font-size: 14px;
 	cursor: grab;
 	transition:
 		background 0.2s,
-		transform 0.1s;
+		box-shadow 0.2s;
+	position: relative;
+	border: 2px solid transparent;
+	@media (max-width: 768px) {
+		padding: 14px;
+
+		.controls {
+			opacity: 1;
+		}
+
+		.iconBtn {
+			padding: 8px;
+		}
+	}
+
+	&:hover {
+		background: #f9fafb;
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+	}
 
 	&:active {
 		cursor: grabbing;
 	}
-}
 
-.dragging {
-	background: #f4f5f7;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-	transform: rotate(2deg);
+	// --- View Mode ---
+	.viewMode {
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			gap: 8px;
+
+			.cardTitle {
+				font-weight: 500;
+				line-height: 1.4;
+				word-break: break-word;
+				flex: 1;
+			}
+
+			.controls {
+				display: flex;
+				gap: 4px;
+				opacity: 0;
+				transition: opacity 0.2s ease;
+
+				.iconBtn {
+					background: transparent;
+					border: none;
+					cursor: pointer;
+					font-size: 14px;
+					padding: 4px;
+					border-radius: 4px;
+					line-height: 1;
+					transition: background 0.2s;
+
+					&:hover {
+						background: rgba(0, 0, 0, 0.05);
+						transform: scale(1.1);
+					}
+				}
+			}
+		}
+
+		&:hover .controls {
+			opacity: 1;
+		}
+
+		.cardDesc {
+			margin-top: 8px;
+			font-size: 12px;
+			color: #5e6c84;
+			line-height: 1.5;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+	}
+
+	// --- Edit Mode ---
+	.editMode {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		.titleInput {
+			width: 100%;
+			border: 2px solid $primary;
+			border-radius: 4px;
+			padding: 6px 8px;
+			font-size: 14px;
+			font-weight: 500;
+			outline: none;
+			background: white;
+		}
+
+		.descInput {
+			width: 100%;
+			min-height: 80px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			padding: 8px;
+			font-size: 12px;
+			font-family: inherit;
+			resize: vertical;
+			outline: none;
+
+			&:focus {
+				border-color: $primary;
+			}
+		}
+
+		.editActions {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+
+			.saveBtn {
+				background: $primary;
+				color: white;
+				border: none;
+				padding: 6px 12px;
+				border-radius: 4px;
+				font-weight: 600;
+				cursor: pointer;
+				transition: filter 0.2s;
+
+				&:hover {
+					filter: brightness(1.1);
+				}
+
+				&:disabled {
+					background: #ccc;
+					cursor: not-allowed;
+				}
+			}
+
+			.cancelBtn {
+				background: transparent;
+				border: none;
+				color: #5e6c84;
+				font-size: 13px;
+				cursor: pointer;
+				text-decoration: underline;
+
+				&:hover {
+					color: #172b4d;
+				}
+			}
+		}
+	}
+
+	&.dragging {
+		background: #ffffff;
+		box-shadow:
+			0 20px 25px -5px rgba(0, 0, 0, 0.1),
+			0 10px 10px -5px rgba(0, 0, 0, 0.04);
+		transform: rotate(2deg) scale(1.02);
+		border-color: $primary;
+		z-index: 1000;
+	}
 }

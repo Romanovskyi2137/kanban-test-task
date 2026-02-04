@@ -1,13 +1,14 @@
-import { getRecentBoards } from '@utils/storage'
+import { useAppStore } from '@store/useAppStore'
 
 import styles from './RecentBoardsWidget.module.scss'
 
 export const RecentBoardsWidget = () => {
-	const boards = getRecentBoards()
+	const boards = useAppStore(state => state.recentBoards)
 
 	if (boards.length === 0) {
 		return null
 	}
+
 	return (
 		<div className={styles.container}>
 			<h3 className={styles.title}>Your Recent Boards</h3>

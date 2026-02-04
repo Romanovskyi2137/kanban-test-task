@@ -6,9 +6,17 @@
 	border-radius: 12px;
 	display: flex;
 	flex-direction: column;
+
+	scroll-snap-align: start;
+
 	max-height: 100%;
 	flex-shrink: 0;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+	@media (max-width: 768px) {
+		width: 85vw;
+		max-height: calc(100vh - 120px);
+	}
 }
 
 .header {
@@ -16,6 +24,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-shrink: 0;
 
 	.title {
 		font-size: 14px;
@@ -25,8 +34,8 @@
 	}
 
 	.count {
-		font-size: 12px;
-		background: rgba(0, 0, 0, 0.08);
+		font-size: 11px;
+		background: rgba(0, 0, 0, 0.06);
 		padding: 2px 8px;
 		border-radius: 10px;
 		color: #5e6c84;
@@ -36,7 +45,7 @@
 .cardsList {
 	flex: 1;
 	overflow-y: auto;
-	padding: 0 12px 8px 12px;
+	padding: 0 12px 12px 12px;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
@@ -54,4 +63,5 @@
 
 .footer {
 	padding: 8px 12px 12px;
+	flex-shrink: 0; // Футер не "тікає"
 }

@@ -15,26 +15,28 @@ export const getRecentBoards = (): RecentBoard[] => {
 		const parsed = JSON.parse(existing)
 		return Array.isArray(parsed) ? parsed : []
 	} catch (error) {
-		console.error('Failed to parse recent boards from storage:', error)
+		console.error('Failed to parse recent boards:', error)
 		return []
 	}
 }
 
-export const saveBoardToStorage = (board: RecentBoard) => {
+export const saveBoardToStorage = (board: RecentBoard): RecentBoard[] => {
 	try {
 		const boards = getRecentBoards()
-
 		const filtered = boards.filter(brd => brd.id !== board.id)
 		const updated = [board, ...filtered].slice(0, MAX_RECENT_BOARDS)
 
 		localStorage.setItem(RECENT_BOARDS_KEY, JSON.stringify(updated))
+		return updated
 	} catch (error) {
-		console.error('Failed to save board to storage:', error)
+		console.error('Failed to save board:', error)
+		return getRecentBoards()
 	}
 }
 
-export const removeBoardFromStorage = (id: string) => {
+export const removeBoardFromStorage = (id: string): RecentBoard[] => {
 	const boards = getRecentBoards()
 	const updated = boards.filter(brd => brd.id !== id)
 	localStorage.setItem(RECENT_BOARDS_KEY, JSON.stringify(updated))
+	return updated
 }
