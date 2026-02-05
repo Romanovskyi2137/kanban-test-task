@@ -5,7 +5,9 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
+		"build": "prisma generate && tsc",
 		"test": "vitest",
+		"start": "node dist/index.js",
 		"test:ui": "vitest --ui",
 		"test:coverage": "vitest run --coverage",
 		"dev": "npx tsx --watch src/index.ts"

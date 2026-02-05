@@ -1,11 +1,11 @@
-import { Router } from 'express'
+// import { Router } from 'express'
 
-import * as columnController from '@/src/api/controllers/column.controller'
+// import * as columnController from '@/src/api/controllers/column.controller'
 
-const router = Router()
+// const router = Router()
 
-router.post('/', columnController.createColumn)
-router.patch('/:id', columnController.updateColumn)
-router.delete('/:id', columnController.deleteColumn)
+// router.post('/', columnController.createColumn)
+// router.patch('/:id', columnController.updateColumn)
+// router.delete('/:id', columnController.deleteColumn)
 
-export default router
+// export default router
