@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"build": "prisma generate && tsc",
+		"build": "prisma generate && tsc && tsc-alias",
 		"test": "vitest",
 		"start": "node dist/index.js",
 		"test:ui": "vitest --ui",
@@ -31,6 +31,7 @@
 		"dotenv": "^17.2.3",
 		"prisma": "^7.3.0",
 		"ts-node-dev": "^2.0.0",
+		"tsc-alias": "^1.8.16",
 		"tsx": "^4.21.0",
 		"typescript": "^5.9.3",
 		"vite-tsconfig-paths": "^6.0.5",

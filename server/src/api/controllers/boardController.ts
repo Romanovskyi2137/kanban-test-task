@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express'
 
-import * as boardService from '@/src/api/controllers/serviсes/board.service'
+import * as boardService from './serviсes/boardService.js'
 
 export const getBoards = async (req: Request, res: Response) => {
 	try {

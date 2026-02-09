@@ -1,8 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { prisma } from '@/lib/prisma'
-
-import * as boardService from './board.service'
+import { prisma } from '../../../lib/prisma'
+import * as boardService from './boardService'
 
 vi.mock('@/lib/prisma', () => ({
 	prisma: {

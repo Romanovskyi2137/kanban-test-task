@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express'
 
-import * as cardService from '@/src/api/controllers/serviсes/card.service'
+import * as cardService from './serviсes/cardService.js'
 
 export const createCard = async (req: Request, res: Response) => {
 	try {

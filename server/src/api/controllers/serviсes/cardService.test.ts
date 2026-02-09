@@ -1,8 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { prisma } from '@/lib/prisma'
-
-import * as cardService from './card.service'
+import { prisma } from '../../../lib/prisma'
+import * as cardService from './cardService'
 
 vi.mock('@/lib/prisma', () => ({
 	prisma: {

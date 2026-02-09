@@ -1,5 +1,22 @@
-node_modules
-# Keep environment variables out of version control
-.env
+# local builds
+dist/
+coverage/
+generated/             
+prisma/generated/  
 
-/generated/prisma
+# mocks
+__mocks__/
+*.test-data/
+*.mock.*
+
+# Vercel / deployment 
+.vercel/
+.output/
+
+# Prisma 
+prisma/dev.db
+prisma/*.sqlite
+
+# local env
+.env.local
+.vercel

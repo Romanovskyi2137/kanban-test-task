@@ -3,9 +3,9 @@
 	"compilerOptions": {
 		// path aliases
 		"baseUrl": ".",
-		"paths": {
-			"@/*": ["./*"]
-		},
+		// "paths": {
+		// 	"@/*": ["./*"]
+		// },
 		// File Layout
 		// "rootDir": "./src",
 		"outDir": "./dist",
@@ -47,5 +47,10 @@
 		"noUncheckedSideEffectImports": true,
 		"moduleDetection": "force",
 		"skipLibCheck": true
+	},
+	"tsc-alias": {
+		"resolveFullPaths": true,
+		"resolveFullExtension": ".js",
+		"verbose": true
 	}
 }

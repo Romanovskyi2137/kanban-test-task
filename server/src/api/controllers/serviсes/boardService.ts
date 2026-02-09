@@ -1,4 +1,4 @@
-import { prisma } from '@/lib/prisma'
+import { prisma } from '../../../lib/prisma'
 
 const DEFAULT_COLUMNS = [
 	{ title: 'To Do', order: 1 },

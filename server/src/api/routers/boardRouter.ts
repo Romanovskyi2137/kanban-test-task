@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import * as boardController from '@/src/api/controllers/board.controller'
+import * as boardController from '../controllers/boardController.js'
 
 const router = Router()
 
