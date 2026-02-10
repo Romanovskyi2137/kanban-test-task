@@ -11,6 +11,8 @@ export const SearchBoardWidget = () => {
 
 		if (id) {
 			const url = new URL(window.location.href)
+			console.log(window.location.href)
+
 			url.searchParams.set('id', id)
 			window.location.href = url.toString()
 		}
