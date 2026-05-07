@@ -4,7 +4,6 @@ export interface Card {
 	description: string | null
 	order: number
 	columnId: number
-	createdAt: string
 }
 
 export interface Column {

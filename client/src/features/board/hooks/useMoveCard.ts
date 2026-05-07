@@ -26,15 +26,14 @@ export const useMoveCard = (boardId: string) => {
 					return old
 				}
 
-				const newColumns = [...old.columns]
-
 				let movedCard: Card | null = null
-				for (const column of newColumns) {
-					const cardIndex = column.cards.findIndex(cardItem => {
-						return cardItem.id === newMove.cardId
-					})
-					if (cardIndex !== -1) {
-						;[movedCard] = column.cards.splice(cardIndex, 1)
+				let sourceColumnId: number | null = null
+
+				for (const column of old.columns) {
+					const card = column.cards.find(card => card.id === newMove.cardId)
+					if (card) {
+						movedCard = card
+						sourceColumnId = column.id
 						break
 					}
 				}
@@ -43,18 +42,46 @@ export const useMoveCard = (boardId: string) => {
 					return old
 				}
 
-				const targetCol = newColumns.find(column => {
-					return column.id === newMove.targetColumnId
-				})
-				if (targetCol) {
-					movedCard.columnId = newMove.targetColumnId
-					movedCard.order = newMove.newOrder
-					targetCol.cards.splice(newMove.newOrder - 1, 0, movedCard)
-
-					targetCol.cards.forEach((card, index) => {
-						card.order = index + 1
-					})
+				const updatedCard: Card = {
+					...movedCard,
+					columnId: newMove.targetColumnId,
+					order: newMove.newOrder
 				}
+
+				const newColumns = old.columns.map(column => {
+					const isSameColumn = sourceColumnId === newMove.targetColumnId
+
+					if (isSameColumn && column.id === sourceColumnId) {
+						const without = column.cards.filter(
+							card => card.id !== newMove.cardId
+						)
+						without.splice(newMove.newOrder - 1, 0, updatedCard)
+						return {
+							...column,
+							cards: without.map((item, i) => ({ ...item, order: i + 1 }))
+						}
+					}
+
+					if (column.id === sourceColumnId) {
+						return {
+							...column,
+							cards: column.cards
+								.filter(card => card.id !== newMove.cardId)
+								.map((item, i) => ({ ...item, order: i + 1 }))
+						}
+					}
+
+					if (column.id === newMove.targetColumnId) {
+						const withInserted = [...column.cards]
+						withInserted.splice(newMove.newOrder - 1, 0, updatedCard)
+						return {
+							...column,
+							cards: withInserted.map((item, i) => ({ ...item, order: i + 1 }))
+						}
+					}
+
+					return column
+				})
 
 				return { ...old, columns: newColumns }
 			})
