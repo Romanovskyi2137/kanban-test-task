@@ -15,7 +15,7 @@
 		]
 	},
 	"scripts": {
-		"prepare": "husky",
+		"prepare": "husky || true",
 		"lint:all": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"lint:file": "eslint --report-unused-disable-directives --max-warnings 0",
 		"format:all": "prettier --log-level warn --write .",
