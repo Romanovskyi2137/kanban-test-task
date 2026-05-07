@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { useAppStore } from '@store/useAppStore'
@@ -7,9 +9,8 @@ import * as boardApi from '../api/board.api'
 
 export const useBoardActions = () => {
 	const queryClient = useQueryClient()
-	const setRecentBoards = useAppStore(state => {
-		return state.setRecentBoards
-	})
+	const navigate = useNavigate()
+	const setRecentBoards = useAppStore(state => state.setRecentBoards)
 
 	const updateMutation = useMutation({
 		mutationFn: ({ id, name }: { id: string; name: string }) => {
@@ -33,8 +34,7 @@ export const useBoardActions = () => {
 		onSuccess: (data, id) => {
 			const updated = removeBoardFromStorage(id)
 			setRecentBoards(updated)
-
-			window.location.replace('/')
+			navigate('/')
 		}
 	})
 

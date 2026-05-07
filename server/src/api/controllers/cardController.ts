@@ -1,78 +1,39 @@
 import type { Request, Response } from 'express'
 
-import * as cardService from './serviсes/cardService.js'
+import * as cardService from './services/cardService.js'
 
 export const createCard = async (req: Request, res: Response) => {
-	try {
-		const { title, description, columnId } = req.body
-
-		if (!title || !columnId) {
-			return res
-				.status(400)
-				.json({ message: 'Title and columnId are required' })
-		}
-
-		const card = await cardService.createCard(
-			title,
-			description,
-			parseInt(columnId)
-		)
-		res.status(201).json(card)
-	} catch (error) {
-		res.status(500).json({ message: 'Error creating card', error })
-	}
+	const { title, description, columnId } = req.body
+	const card = await cardService.createCard(title, description, columnId)
+	res.status(201).json(card)
 }
 
 export const updateCard = async (
 	req: Request<{ id: string }>,
 	res: Response
 ) => {
-	try {
-		const id = parseInt(req.params.id)
-		const updated = await cardService.updateCard(id, req.body)
-		res.json(updated)
-	} catch (error) {
-		res.status(500).json({ message: 'Error updating card', error })
-	}
+	const { title, description } = req.body
+	const updated = await cardService.updateCard(req.params.id, {
+		title,
+		description
+	})
+	res.json(updated)
 }
 
 export const moveCard = async (req: Request<{ id: string }>, res: Response) => {
-	try {
-		const id = parseInt(req.params.id)
-		const { targetColumnId, newOrder } = req.body
-
-		if (
-			isNaN(id) ||
-			isNaN(parseInt(targetColumnId)) ||
-			isNaN(parseInt(newOrder))
-		) {
-			return res
-				.status(400)
-				.json({ message: 'Invalid cardId, columnId or order' })
-		}
-
-		const moved = await cardService.moveCard(
-			id,
-			Number(targetColumnId),
-			Number(newOrder)
-		)
-
-		res.json(moved)
-	} catch (error) {
-		console.error('Backend moveCard error:', error)
-		res.status(500).json({ message: 'Error moving card', error })
-	}
+	const { targetColumnId, newOrder } = req.body
+	const moved = await cardService.moveCard(
+		req.params.id,
+		targetColumnId,
+		newOrder
+	)
+	res.json(moved)
 }
 
 export const deleteCard = async (
 	req: Request<{ id: string }>,
 	res: Response
 ) => {
-	try {
-		const id = parseInt(req.params.id)
-		await cardService.deleteCard(id)
-		res.status(204).send()
-	} catch (error) {
-		res.status(500).json({ message: 'Error deleting card', error })
-	}
+	await cardService.deleteCard(req.params.id)
+	res.status(204).send()
 }

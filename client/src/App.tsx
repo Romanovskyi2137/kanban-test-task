@@ -1,15 +1,28 @@
+import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+
 import Board from '@features/board/Board'
 import { CreateBoardWidget } from '@features/create-board/CreateBoardWidget'
 import { RecentBoardsWidget } from '@features/recent-boards/RecentBoardsWidget'
 import { SearchBoardWidget } from '@features/search-board/SearchBoardWidget'
 
 import { Sidebar } from '@components/Sidebar/Sidebar'
+import { useAppStore } from '@store/useAppStore'
 
 import styles from './App.module.scss'
 
 const App = () => {
-	const params = new URLSearchParams(window.location.search)
-	const boardId = params.get('id') || ''
+	const { boardId } = useParams<{ boardId: string }>()
+	const errorToast = useAppStore(state => state.errorToast)
+	const setErrorToast = useAppStore(state => state.setErrorToast)
+
+	useEffect(() => {
+		if (!errorToast) {
+			return
+		}
+		const timer = setTimeout(() => setErrorToast(null), 4000)
+		return () => clearTimeout(timer)
+	}, [errorToast, setErrorToast])
 
 	return (
 		<div className={styles.appLayout}>
@@ -42,6 +55,15 @@ const App = () => {
 					)}
 				</section>
 			</main>
+
+			{errorToast && (
+				<div
+					className={styles.errorToast}
+					onClick={() => setErrorToast(null)}
+				>
+					{errorToast}
+				</div>
+			)}
 		</div>
 	)
 }

@@ -1,6 +1,10 @@
 @use '@styles/variables' as *;
 
 .container {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
 	textarea {
 		width: 100%;
 		min-height: 60px;
@@ -11,6 +15,47 @@
 		resize: none;
 		outline: none;
 		font-family: inherit;
+		font-size: 14px;
+	}
+
+	.controls {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+
+		.submitBtn {
+			background: $primary;
+			color: white;
+			border: none;
+			padding: 6px 12px;
+			border-radius: 4px;
+			font-weight: 600;
+			font-size: 14px;
+			cursor: pointer;
+			transition: filter 0.2s;
+
+			&:hover {
+				filter: brightness(1.1);
+			}
+
+			&:disabled {
+				background: #ccc;
+				cursor: not-allowed;
+			}
+		}
+
+		.cancelBtn {
+			background: transparent;
+			border: none;
+			color: #5e6c84;
+			font-size: 13px;
+			cursor: pointer;
+			text-decoration: underline;
+
+			&:hover {
+				color: #172b4d;
+			}
+		}
 	}
 }
 .addBtn {

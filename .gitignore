@@ -48,7 +48,11 @@ Thumbs.db
 .vercel/**    
 .output/       
 
-# tests / coverage 
+# AI
+.claude/
+CLAUDE.md
+
+# tests / coverage
 coverage/
 .nyc_output/
 test-results/

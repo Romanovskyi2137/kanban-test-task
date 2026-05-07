@@ -60,12 +60,18 @@ export const AddCardForm = ({ columnId, boardId }: Props) => {
 			/>
 			<div className={styles.controls}>
 				<button
+					className={styles.submitBtn}
 					onClick={handleSubmit}
 					disabled={isPending}
 				>
-					Add card
+					{isPending ? 'Adding...' : 'Add card'}
 				</button>
-				<button onClick={() => setIsEditing(false)}>✕</button>
+				<button
+					className={styles.cancelBtn}
+					onClick={() => setIsEditing(false)}
+				>
+					Cancel
+				</button>
 			</div>
 		</div>
 	)

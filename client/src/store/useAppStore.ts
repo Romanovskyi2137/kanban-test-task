@@ -10,6 +10,8 @@ interface AppState {
 	setSearchQuery: (query: string) => void
 	recentBoards: RecentBoard[]
 	setRecentBoards: (boards: RecentBoard[]) => void
+	errorToast: string | null
+	setErrorToast: (message: string | null) => void
 }
 
 export const useAppStore = create<AppState>(set => ({
@@ -19,5 +21,7 @@ export const useAppStore = create<AppState>(set => ({
 	searchQuery: '',
 	setSearchQuery: query => set({ searchQuery: query }),
 	recentBoards: getRecentBoards(),
-	setRecentBoards: boards => set({ recentBoards: boards })
+	setRecentBoards: boards => set({ recentBoards: boards }),
+	errorToast: null,
+	setErrorToast: message => set({ errorToast: message })
 }))

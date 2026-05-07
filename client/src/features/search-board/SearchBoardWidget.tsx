@@ -1,20 +1,17 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import styles from './SearchBoardWidget.module.scss'
 
 export const SearchBoardWidget = () => {
 	const [boardId, setBoardId] = useState('')
+	const navigate = useNavigate()
 
 	const handleSearch = (e: React.FormEvent) => {
 		e.preventDefault()
 		const id = boardId.trim()
-
 		if (id) {
-			const url = new URL(window.location.href)
-			console.log(window.location.href)
-
-			url.searchParams.set('id', id)
-			window.location.href = url.toString()
+			navigate(`/board/${id}`)
 		}
 	}
 

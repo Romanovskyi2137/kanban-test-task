@@ -9,7 +9,7 @@ module.exports = {
 		'plugin:prettier/recommended',
 		'plugin:@tanstack/eslint-plugin-query/recommended'
 	],
-	ignorePatterns: ['dist', '.eslintrc.cjs'],
+	ignorePatterns: ['dist', '.eslintrc.cjs', '**/generated/**'],
 	parser: '@typescript-eslint/parser',
 	plugins: ['react-refresh', 'prefer-arrow', 'i18next'],
 	rules: {
@@ -74,7 +74,8 @@ module.exports = {
 		'no-lonely-if': 'error',
 		'no-return-assign': 'error',
 		'no-multi-str': 'error',
-		'no-implicit-coercion': 'error'
+		'no-implicit-coercion': 'error',
+		'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }]
 
 		/* i18next */
 		// 'i18next/no-literal-string': [

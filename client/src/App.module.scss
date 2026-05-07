@@ -63,6 +63,34 @@
 	}
 }
 
+.errorToast {
+	position: fixed;
+	bottom: 24px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #dc2626;
+	color: white;
+	padding: 12px 20px;
+	border-radius: 8px;
+	font-size: 14px;
+	font-weight: 500;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+	z-index: 9999;
+	animation: slideUp 0.2s ease;
+
+	@keyframes slideUp {
+		from {
+			opacity: 0;
+			transform: translateX(-50%) translateY(8px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
+		}
+	}
+}
+
 .emptyState {
 	height: 100%;
 	display: flex;
