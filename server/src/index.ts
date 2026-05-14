@@ -4,6 +4,7 @@ import express from 'express'
 import { errorHandler } from './api/middleware/errorHandler.js'
 import boardRouter from './api/routers/boardRouter'
 import cardRouter from './api/routers/cardRouter'
+import healthRouter from './api/routers/healthRouter'
 
 const app = express()
 
@@ -19,6 +20,7 @@ app.use(express.json())
 
 // put other non-error related middlewares here
 
+app.use('/api/health', healthRouter)
 app.use('/api/boards', boardRouter)
 app.use('/api/cards', cardRouter)
 
