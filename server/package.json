@@ -6,6 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "prisma generate && tsc && tsc-alias",
+		"postinstall": "prisma generate",
 		"test": "vitest",
 		"start": "node dist/index.js",
 		"test:ui": "vitest --ui",
