@@ -20,7 +20,12 @@ export const useCardActions = (boardId: string) => {
 
 			return cardApi.update(variables.id, {
 				title,
-				description: description ?? undefined
+				description:
+					description === undefined
+						? undefined
+						: description === ''
+							? null
+							: description
 			})
 		},
 		onSuccess: () => {

@@ -9,7 +9,7 @@ export const cardApi = {
 	},
 	update: async (
 		id: number,
-		data: { title?: string; description?: string }
+		data: { title?: string; description?: string | null }
 	) => {
 		const response = await apiClient.patch(`cards/${id}`, data)
 		return response.data

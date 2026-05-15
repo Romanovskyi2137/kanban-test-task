@@ -20,10 +20,13 @@ export const Card = ({ card, index, boardId }: CardProps) => {
 	const { updateCard, deleteCard } = useCardActions(boardId)
 
 	const handleSave = () => {
+		if (!title.trim()) {
+			return
+		}
 		updateCard.mutate(
 			{
 				id: card.id,
-				data: { title, description }
+				data: { title: title.trim(), description }
 			},
 			{
 				onSuccess: () => {

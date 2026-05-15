@@ -21,7 +21,7 @@ export const useBoardActions = () => {
 
 			const updated = saveBoardToStorage({
 				id: variables.id,
-				name: variables.name
+				name: updatedBoard.name
 			})
 			setRecentBoards(updated)
 		}

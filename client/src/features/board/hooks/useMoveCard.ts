@@ -13,7 +13,7 @@ export const useMoveCard = (boardId: string) => {
 			targetColumnId: number
 			newOrder: number
 		}) => {
-			return apiClient.patch(`/cards/${params.cardId}/move`, params)
+			return apiClient.patch(`cards/${params.cardId}/move`, params)
 		},
 
 		onMutate: async newMove => {
