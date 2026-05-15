@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 import '@styles/main.scss'
 import {
@@ -43,6 +43,15 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 					<Route
 						path="/board/:boardId"
 						element={<App />}
+					/>
+					<Route
+						path="*"
+						element={
+							<Navigate
+								to="/"
+								replace
+							/>
+						}
 					/>
 				</Routes>
 			</BrowserRouter>
