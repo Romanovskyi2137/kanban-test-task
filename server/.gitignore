@@ -1,8 +1,6 @@
 # local builds
 dist/
 coverage/
-generated/             
-prisma/generated/  
 
 # mocks
 __mocks__/

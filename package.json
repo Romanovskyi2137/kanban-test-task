@@ -9,7 +9,7 @@
 		"server"
 	],
 	"lint-staged": {
-		"*.{ts,tsx}": [
+		"{client,server}/src/**/*.{ts,tsx}": [
 			"npm run format:file",
 			"npm run lint:file"
 		]

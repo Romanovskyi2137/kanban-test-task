@@ -37,11 +37,9 @@ docker-compose*
 .DS_Store
 Thumbs.db
 
-# Prisma generated client
-**/generated/prisma/
-**/prisma/generated/      
-**/node_modules/.prisma/   
-**/prisma/dev.db        
+# Prisma
+**/node_modules/.prisma/
+**/prisma/dev.db
 
 # Vercel-specific
 .vercel/
@@ -59,3 +57,4 @@ test-results/
 playwright-report/
 vitest-report/
 *.test-results/
+.vercel
