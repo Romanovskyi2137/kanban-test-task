@@ -8,13 +8,13 @@ import healthRouter from './api/routers/healthRouter'
 
 const app = express()
 
-app.use(
-	cors({
-		origin:
-			process.env.NODE_ENV === 'production' ? process.env.CLIENT_URL : '*',
-		credentials: false
-	})
-)
+const corsOptions: cors.CorsOptions = {
+	origin: process.env.NODE_ENV === 'production' ? process.env.CLIENT_URL : '*',
+	credentials: false
+}
+
+app.options('*', cors(corsOptions))
+app.use(cors(corsOptions))
 
 app.use(express.json())
 
