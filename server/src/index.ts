@@ -2,9 +2,9 @@ import cors from 'cors'
 import express from 'express'
 
 import { errorHandler } from './api/middleware/errorHandler.js'
-import boardRouter from './api/routers/boardRouter'
-import cardRouter from './api/routers/cardRouter'
-import healthRouter from './api/routers/healthRouter'
+import boardRouter from './api/routers/boardRouter.js'
+import cardRouter from './api/routers/cardRouter.js'
+import healthRouter from './api/routers/healthRouter.js'
 
 const app = express()
 
