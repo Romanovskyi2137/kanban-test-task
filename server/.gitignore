@@ -1,5 +1,6 @@
 # local builds
 dist/
+api/
 coverage/
 
 # mocks
